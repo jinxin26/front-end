@@ -1,0 +1,14 @@
+.ant-table-wrapper {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 30px;
+}
+
+.ant-table-pagination {
+    display: flex;
+}
+.ant-table-pagination-right {
+    justify-content: flex-end;
+}
+
