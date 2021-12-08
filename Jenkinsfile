@@ -17,7 +17,6 @@ pipeline {
 
   environment {
     SERVICE = 'front-end'
-    KUBE_CONFIG = credentials('KUBE_CONFIG')
   }
 
   stages {
