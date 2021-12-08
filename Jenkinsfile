@@ -8,7 +8,6 @@ pipeline {
                     [key: 'ref', value: '$.ref']
             ],
             token: 'front-end',
-            causeString: 'Triggered by github webhook on commit $commit to $ref by $committer',
             printContributedVariables: true,
             printPostContent: true,
             silentResponse: true
@@ -30,29 +29,11 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        sh '''
-         set +x
-         ./ci/run-test.sh
-         '''
-      }
-    }
-
     stage('Build') {
       steps {
         sh '''
          set +x
          ./ci/build.sh
-         '''
-      }
-    }
-
-    stage('GenImage') {
-      steps {
-        sh '''
-         set +x
-         ./ci/gen-image.sh
          '''
       }
     }
